@@ -1,6 +1,16 @@
 # PyTorch-YOLOv3
 A minimal PyTorch implementation of YOLOv3, with support for training, inference and evaluation.
 
+## 5g-dive implementation
+##### Requirements
+1. Ubuntu 16.06
+2. Conda Environment
+
+##### Clone and install requirements
+    $ git clone
+    $ cd xxx
+    $ conda create -n pytorch-yolov3 python=3.6 -c conda-forge
+    
 ## Installation
 ##### Clone and install requirements
     $ git clone https://github.com/eriklindernoren/PyTorch-YOLOv3
