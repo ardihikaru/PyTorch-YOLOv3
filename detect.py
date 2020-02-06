@@ -23,7 +23,8 @@ from matplotlib.ticker import NullLocator
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--image_folder", type=str, default="data/samples", help="path to dataset")
+    parser.add_argument("--image_folder", type=str, default="data/samples-2", help="path to dataset")
+    # parser.add_argument("--image_folder", type=str, default="data/samples", help="path to dataset")
     # parser.add_argument("--model_def", type=str, default="config/yolov3.cfg", help="path to model definition file")
     parser.add_argument("--model_def", type=str, default="config/yolo-obj-v5.cfg", help="path to model definition file")
     # parser.add_argument("--weights_path", type=str, default="weights/yolov3.weights", help="path to weights file")
@@ -75,8 +76,17 @@ if __name__ == "__main__":
     print("\nPerforming object detection:")
     prev_time = time.time()
     for batch_i, (img_paths, input_imgs) in enumerate(dataloader):
+        print(">>> img_paths = ", img_paths)
+        print(">>> input_imgs = ", type(input_imgs))
+        print(">>> input_imgs = ", input_imgs.shape)
+
+        print(">>>> v1 img TYPE = ", type(input_imgs))
+        print(">>>> v2 img TSHAPE = ", input_imgs.shape)
+
         # Configure input
         input_imgs = Variable(input_imgs.type(Tensor))
+
+        print(">>>> v2 input_imgs = ", type(input_imgs))
 
         # Get detections
         with torch.no_grad():
